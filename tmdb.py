@@ -12,9 +12,8 @@ import pickle
 from datetime import datetime, timedelta
 import os
 
-TMDB_API_KEY = '5177cf0f498db7d0934403c3fb49d409'
-# Presently the API key is hard coded. However, since I plan on using Google Cloud to deploy
-#I need to figure out a way to use environment variable on the server side the save the key. 
+# Use environment variable for TMDB_API_KEY
+TMDB_API_KEY = os.getenv('TMDB_API_KEY')
 
 class Movie:
     def __init__(self, title, poster_path, overview, release_date, vote_average, vote_count, popularity, adult=None, **kwargs):
