@@ -1,3 +1,10 @@
+'''
+This Streamlit app loads the most popular movies based on TMDb and cycles through them. To keep the code
+efficient, it only pulls the latest JSON data from TMDb if the cache is more than 1 day old. Caching is implemented 
+using a pickle file. If there is already a cache and it's less than 1 day old, the app uses the cache. If either the cache 
+is not available or if it's more than 1 day old, a fresh pull is used.
+'''
+
 import streamlit as st
 import requests
 import time
@@ -6,6 +13,8 @@ from datetime import datetime, timedelta
 import os
 
 TMDB_API_KEY = '5177cf0f498db7d0934403c3fb49d409'
+# Presently the API key is hard coded. However, since I plan on using Google Cloud to deploy
+#I need to figure out a way to use environment variable on the server side the save the key. 
 
 class Movie:
     def __init__(self, title, poster_path, overview, release_date, vote_average, vote_count, popularity, adult=None, **kwargs):
