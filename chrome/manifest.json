@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "Hello World Extension",
+  "version": "1.0",
+  "description": "A simple Chrome extension that copies 'Hello World' to the clipboard.",
+  "permissions": ["clipboardWrite"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_icon": "icon.webp"
+  }
+}
+
