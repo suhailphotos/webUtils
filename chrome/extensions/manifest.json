@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "My first extension",
+  "version": "1.0",
+  "description": "This is the description for my first extension",
+  "icons": {
+    "128": "icon.png"
+  },
+  "action": {
+    "default_icon": {
+      "32": "icon.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["clipboardRead", "clipboardWrite"]
+}
+
