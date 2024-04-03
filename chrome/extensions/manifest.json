@@ -1,19 +1,18 @@
 {
-  "manifest_version": 3,
-  "name": "My first extension",
-  "version": "1.0",
-  "description": "This is the description for my first extension",
-  "icons": {
-    "128": "icon.png"
-  },
-  "action": {
-    "default_icon": {
-      "32": "icon.png"
-    }
-  },
-  "background": {
-    "service_worker": "background.js"
-  },
-  "permissions": ["clipboardRead", "clipboardWrite"]
+    "name": "Markdown URL",
+    "version": "1.0",
+    "manifest_version": 3,
+    "description": "This will help you to markdown url",
+    "background": {
+        "service_worker": "bg.js"
+    },
+    "action": {
+        "default_popup": "popup.html"
+    }, 
+    "permissions": [
+        "storage",
+        "activeTab", 
+        "tabs", 
+        "clipboardRead"
+    ]
 }
-
