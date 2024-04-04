@@ -1,0 +1,45 @@
+{
+    "name": "Markdown URL",
+    "version": "1.2",
+    "manifest_version": 3,
+    "description": "This will help you to markdown url",
+    "background": {
+        "service_worker": "bg.js"
+    },
+    "icons": {
+        "128": "icons/icon.png",
+        "48": "icons/icon.png",
+        "32": "icons/icon.png",
+        "16": "icons/icon.png"
+    },
+    "action": {},
+    "permissions": [
+        "storage",
+        "activeTab",
+        "tabs",
+        "clipboardRead"
+    ],
+    "content_scripts": [
+        {
+            "js": [
+                "content.js"
+            ],
+            "matches": [
+                "<all_urls>"
+            ],
+            "css": [
+                "style.css"
+            ]
+        }
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "inject.html"
+            ],
+            "matches": [
+                "<all_urls>"
+            ]
+        }
+    ]
+}

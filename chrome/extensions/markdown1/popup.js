@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
     btn.addEventListener("click", function () {
       let t_value = title.value;
       let desc_value = desc.value;
-      let parsed = `**[${t_value}](${url})**,*${desc_value}*`;
+      let parsed = `- **[${t_value}](${url})** *${desc_value}*<br>`;
       copyToClipboard(parsed);
     });
   });

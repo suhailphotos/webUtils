@@ -1,0 +1,85 @@
+ ex-body * {
+     margin: 0 !important;
+     padding: 0 !important;
+     font-family: sans-serif !important;
+     box-sizing: border-box !important;
+     font-size: 13px !important;
+     color: rgb(59, 71, 87) !important;
+ }
+
+ :root {
+     --btn-bg: rgb(14, 152, 231) !important;
+     --btn-hover-bg: rgb(58, 154, 209) !important;
+     --btn-focus-bg: rgb(184, 184, 184) !important;
+     --btn-focus-color: rgb(241, 241, 241) !important;
+ }
+
+ ex-body {
+     position: fixed !important;
+     top: 5px !important;
+     right: 5px !important;
+     z-index: 1000 !important;
+     background: white !important;
+     padding: 5px;
+     border-radius: 5px;
+     border: 1px solid #ddd !important;
+ }
+
+ ex-body main {
+     padding: 10px !important;
+     min-width: 300px !important;
+     display: flex !important;
+     flex-direction: column !important;
+     gap: 5px !important;
+ }
+
+ ex-body button,
+ ex-body textarea,
+ ex-body input {
+     outline: none !important;
+     border: none !important;
+     padding: 5px !important;
+     border-radius: 5px !important;
+     width: 100% !important;
+ }
+
+ ex-body #hidden {
+     position: fixed !important;
+     margin-left: 999px !important;
+ }
+
+ ex-body textarea,
+ ex-body input {
+     border: 1px solid #ddd !important;
+ }
+
+ ex-body textarea {
+     height: 200px !important;
+     resize: none !important;
+ }
+
+ ex-body button {
+     height: 25px !important;
+     font-size: 11px !important;
+     cursor: pointer !important;
+     color: white !important;
+     background: var(--btn-bg) !important;
+ }
+
+ ex-body button:hover {
+     background: var(--btn-hover-bg) !important;
+ }
+
+ ex-body button:focus {
+     background: var(--btn-focus-bg) !important;
+     color: var(--btn-focus-color) !important;
+ }
+
+ ex-body *[flex] {
+     display: flex !important;
+     gap: 2px
+ }
+
+ .ds-none {
+     display: none !important;
+ }
