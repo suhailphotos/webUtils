@@ -60,11 +60,11 @@
         let command = this.getAttribute("btn");
         let parsed = "NOT DETECTED";
         if (command == "1") {
-          parsed = `-**[${t_value}](${url})** *${desc_value}* \n`;
+          parsed = `- **[${t_value}](${url})** *${desc_value}* \n`;
         } else if (command == "2") {
-          parsed = `##[${t_value}](${url})\n *${desc_value}* \n`;
+          parsed = `## [${t_value}](${url})\n *${desc_value}* \n`;
         } else if (command == "3") {
-          parsed = `###[${t_value}](${url})\n *${desc_value}* \n`;
+          parsed = `### [${t_value}](${url})\n *${desc_value}* \n`;
         }
         copyToClipboard(parsed);
       });
