@@ -13,9 +13,10 @@
   });
 
   let container = div.querySelector("ex-body");
-  function toogleWindow() {
+  async function toogleWindow() {
     if (container.classList.contains("ds-none")) {
       container.classList.remove("ds-none");
+      document.getElementById("markdown-desc").value = await getClipboardText();
     } else {
       container.classList.add("ds-none");
     }
@@ -27,12 +28,6 @@
     hiddenInput.value = text;
     hiddenInput.select();
     document.execCommand("copy");
-
-    if (!container.classList.contains("ds-none")) {
-      setTimeout(() => {
-        container.classList.add("ds-none");
-      }, delayOfHidingWindow * 1000);
-    }
   }
   async function getClipboardText() {
     hiddenInput.focus();
@@ -49,13 +44,18 @@
   let btns = document.querySelectorAll("button[copy]");
   let originalClipboardText = await getClipboardText();
   let url = "-";
+  desc.addEventListener("input", function () {
+    copyToClipboard(this.value);
+    desc.focus();
+  });
   chrome.runtime.sendMessage({ref: "getCurrentTabTitle"}, async function (e) {
     title.value = e.title;
     url = e.url;
-    desc.value = originalClipboardText;
+    // desc.value = originalClipboardText;
     btns.forEach((btn) => {
-      btn.addEventListener("click", function () {
+      btn.addEventListener("click", async function () {
         let t_value = title.value;
+        desc.value = await getClipboardText();
         let desc_value = desc.value?.trim();
         let command = this.getAttribute("btn");
         let parsed = "NOT DETECTED";
@@ -67,6 +67,11 @@
           parsed = `### [${t_value}](${url})\n *${desc_value}* \n`;
         }
         copyToClipboard(parsed);
+        if (!container.classList.contains("ds-none")) {
+          setTimeout(() => {
+            container.classList.add("ds-none");
+          }, delayOfHidingWindow * 1000);
+        }
       });
     });
   });

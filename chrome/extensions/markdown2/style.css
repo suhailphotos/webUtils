@@ -18,7 +18,7 @@
      position: fixed !important;
      top: 5px !important;
      right: 5px !important;
-     z-index: 9999 !important;
+     z-index: 1000000000000000 !important;
      background: white !important;
      padding: 5px;
      border-radius: 5px;
@@ -51,6 +51,7 @@
  ex-body textarea,
  ex-body input {
      border: 1px solid #ddd !important;
+     background: white !important;
  }
 
  ex-body textarea {

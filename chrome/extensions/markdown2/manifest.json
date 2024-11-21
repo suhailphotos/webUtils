@@ -1,6 +1,6 @@
 {
     "name": "Markdown URL",
-    "version": "1.2",
+    "version": "1.4",
     "manifest_version": 3,
     "description": "This will help you to markdown url",
     "background": {
